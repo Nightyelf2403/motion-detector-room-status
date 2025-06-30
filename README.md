@@ -1,28 +1,4 @@
-To fix the issue and make your `README.md` both **attractive and fully functional** (including visible block diagram), follow these steps and use the **updated copy-paste-ready version** below.
 
----
-
-### ✅ What was wrong:
-
-* You had this:
-
-  ```markdown
-  ![Block Diagram](./block_diagram.png)
-  ```
-
-  But the image wasn't actually named `block_diagram.png` or placed in the repo folder.
-
----
-
-### ✅ What to do:
-
-1. Rename your block diagram image to `block_diagram.png`
-2. Place the renamed image file directly in your project folder (same directory as the `README.md`)
-3. Use the following updated `README.md` content:
-
----
-
-````markdown
 # 🧠 Motion Detector using OpenCV
 
 ## 📌 Overview
@@ -105,7 +81,7 @@ Press `q` to quit and save the recording.
 
 Illustrates the workflow of the motion detection system:
 
-![Block Diagram](motion-detector-room-status/block_diagram.png)
+![Block Diagram](block_diagram.png)
 
 ---
 
