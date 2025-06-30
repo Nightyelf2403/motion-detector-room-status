@@ -1,96 +1,125 @@
-
-# Motion Detector using OpenCV
-
-## Overview
-
-This project implements a real-time motion detection system using OpenCV in Python. It captures video from a webcam, detects movement using background subtraction (MOG2), highlights the largest moving object, displays the system state on screen, and records annotated video. States include "My Room: Object" when motion is detected and "My Room: Vacant" otherwise.
+To fix the issue and make your `README.md` both **attractive and fully functional** (including visible block diagram), follow these steps and use the **updated copy-paste-ready version** below.
 
 ---
 
-## Features
+### ✅ What was wrong:
 
-- ✅ Real-time motion detection from webcam  
-- ✅ Background subtraction using MOG2 (Gaussian Mixture-based)  
-- ✅ Automatic state management with timers ("Object" / "Vacant")  
-- ✅ Bounding box over detected motion  
-- ✅ Recording indicator (red circle)  
-- ✅ Saves video with overlays as `output.avi`
+* You had this:
+
+  ```markdown
+  ![Block Diagram](./block_diagram.png)
+  ```
+
+  But the image wasn't actually named `block_diagram.png` or placed in the repo folder.
 
 ---
 
-## Setup Instructions
+### ✅ What to do:
 
-1. **Install required packages**:
-   ```bash
-   pip install opencv-python
+1. Rename your block diagram image to `block_diagram.png`
+2. Place the renamed image file directly in your project folder (same directory as the `README.md`)
+3. Use the following updated `README.md` content:
+
+---
+
+````markdown
+# 🧠 Motion Detector using OpenCV
+
+## 📌 Overview
+
+This project implements a real-time motion detection system using **OpenCV** in Python. It captures video from a webcam, detects movement using background subtraction (MOG2), highlights the largest moving object with bounding boxes, displays the current room state on screen, and records the annotated video.
+
+✨ States:
+- `My Room: Object` (motion detected)
+- `My Room: Vacant` (no motion for 1 second)
+
+---
+
+## 🚀 Features
+
+✅ Real-time webcam motion detection  
+✅ Gaussian Mixture-based background subtraction (MOG2)  
+✅ Motion-based room state tracking  
+✅ Bounding rectangle around detected object  
+✅ Red recording indicator  
+✅ Annotated video output as `output.avi`  
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Install required packages
+```bash
+pip install opencv-python
 ````
 
-2. **Run the program**:
+### 2. Run the detector
 
-   ```bash
-   python motion_detector.py
-   ```
+```bash
+python motion_detector.py
+```
 
-3. **Quit with** `q` to stop the detection and save the video.
+### 3. Stop detection
 
----
-
-## How It Works
-
-The motion detection system works in the following stages:
-
-### 1. Preprocessing
-
-* Converts each frame to grayscale
-* Applies Gaussian blur to reduce noise
-
-### 2. Background Subtraction
-
-* Uses `cv.createBackgroundSubtractorMOG2()`
-* Detects dynamic regions (i.e., moving objects)
-
-### 3. Foreground Masking and Contours
-
-* Generates a binary mask of moving regions
-* Detects contours
-* Draws a bounding rectangle over the largest contour if it exceeds the noise threshold
-
-### 4. State Tracking
-
-* If motion is detected, sets state to "Object"
-* If no motion is detected for 1 second, state becomes "Vacant"
-
-### 5. Annotation
-
-* Displays current state ("My Room: Object"/"Vacant") on frame
-* Adds a red circle in the corner as a recording indicator
+Press `q` to quit and save the recording.
 
 ---
 
+## 🛠️ How It Works
 
-📹 **Output Video**: `output.avi`
+### 1. **Preprocessing**
+
+* Convert frames to grayscale
+* Apply Gaussian blur
+
+### 2. **Background Subtraction**
+
+* `cv.createBackgroundSubtractorMOG2()`
+* Extract dynamic (moving) regions
+
+### 3. **Motion Detection**
+
+* Threshold + contour detection
+* Draw bounding box around largest motion
+
+### 4. **Room State Logic**
+
+* "Object" = motion present
+* "Vacant" = no motion for 1s
+
+### 5. **Frame Annotation**
+
+* State text label with OpenCV `putText`
+* Red circle in top-right to indicate system running
 
 ---
 
-## Block Diagram
+## 🎬 Sample Output
 
-Below is a block diagram that outlines the logic and data flow of the motion detector:
-
-![Block Diagram](./block_diagram.png)
-
----
-
-## Assumptions & Constraints
-
-* **Static Camera**: Assumes camera is fixed in place
-* **Indoor Use**: Lighting is stable and consistent
-* **Low Noise**: Input feed is assumed to be relatively clean
-* **Single Object Focus**: Tracks the largest moving object only
-* **Empirical Thresholds**: Tuning required for different environments
+📽️ `output.avi` – recorded annotated video
+🖼️ Frame Example: (bounding box + "My Room: Object")
 
 ---
 
-## Source Code (Excerpt)
+## 🧭 Block Diagram
+
+Illustrates the workflow of the motion detection system:
+
+![Block Diagram](motion-detector-room-status/block_diagram.png)
+
+---
+
+## 📋 Assumptions & Constraints
+
+* 🔒 **Static camera** (no movement)
+* 🏠 **Indoor** with controlled lighting
+* 🔇 **Low video noise** preferred
+* 🧍 **Tracks one object** (largest motion)
+* ⚙️ **Empirical tuning** of threshold values may be needed
+
+---
+
+## 📌 Code Snippet Example
 
 ```python
 if current_state == "Object":
@@ -103,15 +132,15 @@ cv.circle(frame, (frame_width - 30, 30), 10, (0, 0, 255), -1)
 
 ---
 
-## References
+## 📚 References
 
-* [PyImageSearch: Motion Detection Tutorial](https://pyimagesearch.com/)
-* [OpenCV-Python Docs](https://docs.opencv.org/)
-* **DeepSeek AI**: Assisted with UI annotation logic (putText, circle overlays)
+* 🔗 [PyImageSearch – Motion Detection](https://pyimagesearch.com/)
+* 📘 [OpenCV Python Documentation](https://docs.opencv.org/)
+* 🤖 DeepSeek AI – used for UI suggestions (e.g. `putText`, `circle` overlays)
 
 ---
 
-## Author
+## 👤 Author
 
 **Lalith Aditya Chunduri**
 
