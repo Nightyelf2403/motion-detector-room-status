@@ -73,7 +73,6 @@ Press `q` to quit and save the recording.
 ## 🎬 Sample Output
 
 📽️ `output.avi` – recorded annotated video
-🖼️ Frame Example: (bounding box + "My Room: Object")
 
 ---
 
@@ -121,7 +120,7 @@ cv.circle(frame, (frame_width - 30, 30), 10, (0, 0, 255), -1)
 **Lalith Aditya Chunduri**
 
 
-```
+---
 
+> © 2025 Lalith Aditya Chunduri – All rights reserved.
 
-```
